@@ -23,7 +23,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'sdf#$#dfjkhdf0SDJH0df9fd98343fdfu34rf'
 db.init_app(app)
 
-# Adding Route For Accounts 
 class Users(db.Model):
     __tablename__ = 'production_accounts'
 
@@ -170,6 +169,9 @@ class Medications(db.Model):
             'med_human_name': self.med_human_name
         }
 
+
+
+
 @app.route('/')
 def index():
     return render_template('landing.html')
@@ -211,7 +213,7 @@ def register():
         elif request.form['account_type'] == 'patient':
             return redirect(url_for('register_patient'))
         elif request.form['account_type'] == 'careprovider':
-            return redirect(url_for('register_careprovider'))
+            return redirect(url_for('register_provider'))
     elif request.method == 'POST':
         msg = 'Please fill out the form!'
     return render_template('register.html', msg=msg)
@@ -242,7 +244,7 @@ def register_admin():
 
 
 @app.route('/register/careprovider', methods=['GET', 'POST'])
-def register_careprovider():
+def register_provider():
     msg = 'Something Went Wrong'
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
         username = request.form['username']
@@ -262,7 +264,7 @@ def register_careprovider():
             msg = "You have successfully registered a CARE PROVIDER account!"
     elif request.method == 'POST':
         msg = 'Please fill out the form!'
-    return render_template('register_careprovider.html', msg=msg)
+    return render_template('register_provider.html', msg=msg)
 
 
 @app.route('/register/patient', methods=['GET', 'POST'])
