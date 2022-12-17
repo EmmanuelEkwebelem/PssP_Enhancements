@@ -1,25 +1,16 @@
-# HHA 504 - Assignment # 7
+# HHA 504 - Assignment #9
 
-This repository represents the completion of HHA 504 Assignment #7
+This repository represents the completion of HHA 504 Assignment #9
 
 Instructions:
 
-Create a new github repo called PssP in your github  
+Create a new github repo called PssP_Enhancements in your github  
 
-Copy the code (files, folders, subfolders) from Part6_CRUD in our HHA-504-2022 repo (https://github.com/hantswilliams/HHA-504-2022/tree/main/Part6_CRUD) 
+Update the landing page to look more like a fake patient portal
 
-Re-create your own cloud-managed mysql database (either in GCP or Azure) or re-use one if you already have one running, and execute the scripts located in Part5_DBs to create some testing data (https://github.com/hantswilliams/HHA-504-2022/tree/main/Part5_DBs)   
+Create another new account type called: care provider. The care provider should have permissions to edit existing patients
+There should be a new endpoint for creating this account type; and a new dropdown field value within SQL for account_type
 
-Then create your .ENV file with the proper credentials/keys so the flask PssP app nows how to connect to the database 
+Enable edit functionality for profile Should be able to update email, username
 
-Then update the PssP code in the following ways: 
-- Include in at least 3 additional patient demographic fields that are displayed in the /patients and patient details views (note, you may need to update your SQL schema depending on what you decide to use or not use)  
-- Update the EDIT functionality to include the ability to also edit the 3 new fields in the edit modal window dialogue 
-- Update the NEW PATIENT functionality to include the ability to also include the 3 new fields in the new patient modal window dialogue 
-- OPTIONAL: attempt to replicate the 'EDIT' functionality within the medications detail view; I have provided the code currently within conditions, try and create a similar process 
-
-Include a new folder in the repo called IMAGES - this folder should contain the following screen shots: 
-- Screen shot of the app running on your browser on the /patients list page, showing dummy patients with the newly added demographics
-- Screen shot of the app running on your browser on one of the patient details pages - showing some dummy patient details with the newly added demographics  
-- Screen shot of the updated modal window for EDITING a patient from the /patients list view 
-- Screen shot of the updated modal window for the NEW PATIENT action from the /patients list view
+Record a Video (e.g., Zoom recorded to the cloud, provide me with link + password) that provides me with a demo of what you were able to accomplish, and what troubles you encounter
